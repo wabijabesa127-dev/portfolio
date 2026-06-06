@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Wabi Jabesa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>WJ Admin</h2>
+                <p>Portfolio Manager</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="posts.html" class="nav-item">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Blog Posts</span>
+                </a>
+                <a href="messages.html" class="nav-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="subscribers.html" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Subscribers</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="welcome">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, <span id="adminName">Admin</span></p>
+                </div>
+                <div class="date-time" id="dateTime"></div>
+            </header>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-newspaper"></i></div>
+                    <div class="stat-info">
+                        <h3 id="totalPosts">0</h3>
+                        <p>Blog Posts</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-comment"></i></div>
+                    <div class="stat-info">
+                        <h3 id="totalComments">0</h3>
+                        <p>Comments</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="stat-info">
+                        <h3 id="totalMessages">0</h3>
+                        <p>Messages</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                        <h3 id="totalSubscribers">0</h3>
+                        <p>Subscribers</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="recent-section">
+                <div class="section-header">
+                    <h2>Recent Messages</h2>
+                    <a href="messages.html" class="view-all">View All →</a>
+                </div>
+                <div class="recent-table" id="recentMessages">
+                    <table>
+                        <thead>
+                            <tr><th>Name</th><th>Email</th><th>Subject</th><th>Date</th></tr>
+                        </thead>
+                        <tbody id="messagesTableBody">
+                            <tr><td colspan="4" style="text-align: center;">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="recent-section">
+                <div class="section-header">
+                    <h2>Recent Blog Posts</h2>
+                    <a href="posts.html" class="view-all">View All →</a>
+                </div>
+                <div class="recent-table">
+                    <table>
+                        <thead>
+                            <tr><th>Title</th><th>Category</th><th>Views</th><th>Date</th></tr>
+                        </thead>
+                        <tbody id="postsTableBody">
+                            <tr><td colspan="4" style="text-align: center;">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/admin.js"></script>
+</body>
+</html>

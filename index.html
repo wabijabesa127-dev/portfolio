@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wabi Jabesa | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+</head>
+<body>
+    <div class="overlay"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text float-animation">WJ</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="menu-toggle">☰</div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content reveal-left">
+                    <div class="hero-badge pulse-animation">Welcome to my portfolio</div>
+                    <h1 class="hero-title">
+                        <span class="greeting">Hi, I'm</span>
+                        <span class="name shimmer-text">Wabi Jabesa</span>
+                    </h1>
+                    <div class="hero-typed">
+                        <span class="typed-text"></span>
+                        <span class="cursor typing-cursor">|</span>
+                    </div>
+                    <p class="hero-description">
+                        Information Systems student passionate about creating elegant solutions 
+                        through code. Currently exploring Java, Web Development, and Database Systems.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="projects.html" class="btn-primary magnetic-btn hover-grow">View My Work</a>
+                        <a href="contact.html" class="btn-secondary magnetic-btn hover-grow">Let's Connect</a>
+                    </div>
+                    <div class="hero-stats stagger-container">
+                        <div class="stat hover-lift">
+                            <span class="stat-number counter-number" data-target="10">0</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat hover-lift">
+                            <span class="stat-number counter-number" data-target="5">0</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat hover-lift">
+                            <span class="stat-number counter-number" data-target="2024">0</span>
+                            <span class="stat-label">Started</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-container reveal-right">
+                    <div class="hero-image-wrapper float-reverse">
+                        <img src="images/myImage.png" alt="Wabi Jabesa" class="hero-img glow-animation">
+                        <div class="image-ring"></div>
+                        <div class="image-dots"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="footer-logo-text">WJ</span>
+                        <h3>Wabi Jabesa</h3>
+                    </div>
+                    <p class="footer-desc">Building modern web experiences with passion and purpose. Information Systems student aspiring to become a professional software developer.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/wabijabesa127-dev" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/wabi-jabesa-905b3a35b" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/wabijfite" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/WabiJ38333" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>My Skills</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Java Programming</a></li>
+                        <li><a href="#">Database Design</a></li>
+                        <li><a href="#">Responsive Design</a></li>
+                        <li><a href="#">Problem Solving</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:wabijabesa127@gmail.com">wabijabesa127@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+251942501020">+251 942 501 020</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ethiopia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Wabi Jabesa. All rights reserved.</p>
+                    <p class="footer-quote">"With God, all things are possible"</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

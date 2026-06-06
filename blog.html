@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wabi Jabesa | Blog</title>
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+</head>
+<body>
+    <div class="bg-overlay"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text float-animation">WJ</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="menu-toggle">☰</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content reveal-up">
+                <span class="section-badge pulse-animation">My Thoughts & Tutorials</span>
+                <h1>Latest <span class="highlight shimmer-text">Blog Posts</span></h1>
+                <p>Sharing my journey, knowledge, and experiences in tech</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="blog-controls">
+        <div class="container">
+            <div class="controls-wrapper reveal-scale">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search blog posts...">
+                    <button id="clearSearch" class="clear-search"><i class="fas fa-times"></i></button>
+                </div>
+                
+                <div class="filter-tabs stagger-container">
+                    <button class="filter-tab active magnetic-btn" data-category="all">All Posts</button>
+                    <button class="filter-tab magnetic-btn" data-category="programming">Programming</button>
+                    <button class="filter-tab magnetic-btn" data-category="web-dev">Web Development</button>
+                    <button class="filter-tab magnetic-btn" data-category="java">Java</button>
+                    <button class="filter-tab magnetic-btn" data-category="career">Career</button>
+                    <button class="filter-tab magnetic-btn" data-category="tutorial">Tutorial</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="featured-post reveal-scale" id="featuredPost">
+                <!-- Featured post will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid stagger-container" id="blogGrid">
+                <!-- Blog posts will be dynamically loaded via JavaScript -->
+            </div>
+            
+            <!-- Loading Spinner -->
+            <div class="loading-spinner" id="loadingSpinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading posts...</p>
+            </div>
+            
+            <!-- No Results -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-newspaper"></i>
+                <h3>No posts found</h3>
+                <p>Try adjusting your search or filter to find what you're looking for.</p>
+                <button id="resetFilters" class="btn-primary magnetic-btn">Reset Filters</button>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more" id="loadMoreContainer" style="display: none;">
+                <button id="loadMoreBtn" class="btn-secondary magnetic-btn hover-grow">Load More Posts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-wrapper reveal-scale">
+                <div class="newsletter-icon float-animation">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h2>Subscribe to My Newsletter</h2>
+                <p>Get the latest blog posts, tutorials, and updates delivered straight to your inbox.</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                        <button type="submit" class="magnetic-btn">Subscribe</button>
+                    </div>
+                    <div class="newsletter-status" id="newsletterStatus"></div>
+                </form>
+                <p class="newsletter-note">No spam, unsubscribe anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Wabi Jabesa. All rights reserved.</p>
+                <p class="footer-quote float-animation">"With God, all things are possible"</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Post Modal for Quick View -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closePostModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Post image" class="modal-image">
+                <div class="modal-category" id="modalCategory"></div>
+                <h2 id="modalTitle"></h2>
+                <div class="modal-meta">
+                    <span><i class="fas fa-calendar"></i> <span id="modalDate"></span></span>
+                    <span><i class="fas fa-clock"></i> <span id="modalReadTime"></span> min read</span>
+                </div>
+                <p id="modalExcerpt" class="modal-excerpt"></p>
+                <a href="#" id="modalReadMore" class="btn-primary magnetic-btn">Read Full Article</a>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="footer-logo-text">WJ</span>
+                        <h3>Wabi Jabesa</h3>
+                    </div>
+                    <p class="footer-desc">Building modern web experiences with passion and purpose. Information Systems student aspiring to become a professional software developer.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/wabijabesa127-dev" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/wabi-jabesa-905b3a35b" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/wabijfite" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/WabiJ38333" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>My Skills</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Java Programming</a></li>
+                        <li><a href="#">Database Design</a></li>
+                        <li><a href="#">Responsive Design</a></li>
+                        <li><a href="#">Problem Solving</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:wabijabesa127@gmail.com">wabijabesa127@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+251942501020">+251 942 501 020</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ethiopia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 Wabi Jabesa. All rights reserved.</p>
+                    <p class="footer-quote">"With God, all things are possible"</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
