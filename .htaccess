@@ -1,0 +1,30 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Custom 404 error page
+ErrorDocument 404 /404.html
+
+# Redirect to index.html as default
+DirectoryIndex index.html
+
+# Force HTTPS (if you have SSL)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Redirect www to non-www (or vice versa)
+RewriteCond %{HTTP_HOST} ^www\.wabijabesa\.com [NC]
+RewriteRule ^(.*)$ https://wabijabesa.com/$1 [L,R=301]
+
+# Cache static files for better performance
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|webp)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Protect sensitive files
+<FilesMatch "^(\.env|\.git|config\.json|package\.json|package-lock\.json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Disable directory browsing
+Options -Indexes

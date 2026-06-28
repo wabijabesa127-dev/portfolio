@@ -1171,3 +1171,359 @@ body.light-mode .education-section {
     width: 0;
     transition: width 1s ease;
 }
+
+/* ============================================
+   FUN FACTS SECTION
+   ============================================ */
+
+.fun-facts-section {
+    padding: 60px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .fun-facts-section {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.fun-facts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.fact-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gradient-start);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.fact-icon {
+    font-size: 2.5rem;
+    color: var(--gradient-start);
+    margin-bottom: 1rem;
+}
+
+.fact-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.fact-title {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   READ MORE BUTTON & CONTENT
+   ============================================ */
+
+.read-more-btn {
+    display: inline-block;
+    background: none;
+    border: none;
+    color: var(--gradient-start);
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px 0;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    color: #fbbf24;
+    transform: translateX(5px);
+}
+
+.read-more-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.read-more-content.open {
+    max-height: 200px;
+}
+
+/* ============================================
+   FOOTER QUOTE BOLD STYLES
+   ============================================ */
+
+.footer-quote-bold {
+    color: var(--gradient-start) !important;
+    font-style: italic;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-shadow: 0 0 5px rgba(56, 189, 248, 0.3);
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   FOOTER LOGO IMAGE
+   ============================================ */
+
+.footer-logo-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gradient-start);
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.footer-logo-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+    border-color: #fbbf24;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo h3 {
+    margin-top: 5px;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .footer-logo {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-logo-img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+}
+
+/* ============================================
+   RESPONSIVE FOR FUN FACTS
+   ============================================ */
+
+@media (max-width: 992px) {
+    .fun-facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .fun-facts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   PRIVACY & TERMS MODAL STYLES
+   ============================================ */
+
+/* Privacy Modal */
+.privacy-modal,
+.terms-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.privacy-modal-content,
+.terms-modal-content {
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    border-radius: 24px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2rem;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+body.light-mode .privacy-modal-content,
+body.light-mode .terms-modal-content {
+    background: linear-gradient(135deg, #ffffff, #f1f5f9);
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.privacy-modal-close,
+.terms-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.privacy-modal-close:hover,
+.terms-modal-close:hover {
+    color: #ef4444;
+    transform: scale(1.1);
+}
+
+.privacy-modal-icon,
+.terms-modal-icon {
+    font-size: 50px;
+    color: var(--gradient-start);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.privacy-modal h2,
+.terms-modal h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.privacy-modal-body,
+.terms-modal-body {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.privacy-modal-body h3,
+.terms-modal-body h3 {
+    color: var(--gradient-start);
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.privacy-modal-body ul,
+.terms-modal-body ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.privacy-modal-body li,
+.terms-modal-body li {
+    margin-bottom: 0.3rem;
+}
+
+.privacy-modal-btn,
+.terms-modal-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.privacy-modal-btn:hover,
+.terms-modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Navigation Logo Image */
+.nav-logo-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gradient-start);
+    transition: all 0.3s ease;
+}
+
+.nav-logo-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+

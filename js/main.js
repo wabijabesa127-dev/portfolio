@@ -85,45 +85,45 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     
-    const typedWords = ['Developer', 'Problem Solver', 'Student', 'Creative Thinker'];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typedTextElement = document.querySelector('.typed-text');
+ const typedWords = ['Developer', 'Problem Solver', 'Student', 'Creative Thinker'];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typedTextElement = document.querySelector('.typed-text');
+
+function typeEffect() {
+    if (!typedTextElement) return;
     
-    function typeEffect() {
-        if (!typedTextElement) return;
-        
-        const currentWord = typedWords[wordIndex];
-        
-        if (isDeleting) {
-            typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-        }
-        
-        if (!isDeleting && charIndex === currentWord.length) {
-            isDeleting = true;
-            setTimeout(typeEffect, 2000);
-            return;
-        }
-        
-        if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % typedWords.length;
-            setTimeout(typeEffect, 400);
-            return;
-        }
-        
-        const speed = isDeleting ? 30 : 90;
-        setTimeout(typeEffect, speed);
+    const currentWord = typedWords[wordIndex];
+    
+    if (isDeleting) {
+        typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
     }
     
-    if (typedTextElement) {
-        setTimeout(typeEffect, 400);
+    if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 3000);  // Pause 3 seconds before deleting
+        return;
     }
+    
+    if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % typedWords.length;
+        setTimeout(typeEffect, 1000);  // Pause 1 second before next word
+        return;
+    }
+    
+    const speed = isDeleting ? 100 : 150;  // Slower typing
+    setTimeout(typeEffect, speed);
+}
+
+if (typedTextElement) {
+    setTimeout(typeEffect, 1000);
+}
     
     
     const counters = document.querySelectorAll('.counter-number, .stat-number, .exp-number');

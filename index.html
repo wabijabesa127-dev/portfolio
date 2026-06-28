@@ -3,7 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
     <title>Wabi Jabesa | Home</title>
+    <meta name="description" content="Wabi Jabesa - Information Systems Student and aspiring Full Stack Developer. Passionate about web development, Java programming, and creating elegant digital solutions.">
+    <meta name="keywords" content="Wabi Jabesa, portfolio, developer, full stack developer, web developer, Java, HTML, CSS, JavaScript, MySQL, Information Systems, Ethiopia">
+    <meta name="author" content="Wabi Jabesa">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wabijabesa.com/">
+    <meta property="og:title" content="Wabi Jabesa | Information Systems Student & Full Stack Developer">
+    <meta property="og:description" content="Information Systems student passionate about creating elegant solutions through code.">
+    <meta property="og:image" content="https://wabijabesa.com/images/myImage.png">
+    <meta property="og:site_name" content="Wabi Jabesa Portfolio">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wabi Jabesa | Information Systems Student & Full Stack Developer">
+    <meta name="twitter:description" content="Information Systems student passionate about creating elegant solutions through code.">
+    <meta name="twitter:image" content="https://wabijabesa.com/images/myImage.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://wabijabesa.com/">
+    
+    <!-- Circular Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CclipPath id='circle'%3E%3Ccircle cx='50' cy='50' r='45'/%3E%3C/clipPath%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='%2338bdf8'/%3E%3Cimage href='images/myImage.png' x='5' y='5' width='90' height='90' clip-path='url(%23circle)'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="images/myImage.png">
+    
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,18 +42,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 </head>
 <body>
+    <!-- ============================================
+         PREMIUM CINEMATIC LOADING SCREEN
+    ============================================ -->
+    <div class="preloader" id="preloader">
+        <div class="loader-overlay"></div>
+        <div class="fragments-container" id="fragmentsContainer"></div>
+        <div class="loader-glow"></div>
+        <div class="loader-content">
+            <h1 class="loader-name">Wabi Jabesa Fite</h1>
+            <p class="loader-title">Information System Student &amp; Full Stack Developer</p>
+            <div class="loader-progress-bar">
+                <div class="loader-progress-fill" id="loaderProgressFill"></div>
+            </div>
+            <div class="loader-progress-text" id="loaderProgressText">0%</div>
+        </div>
+    </div>
+
     <div class="overlay"></div>
     
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Navigation with Profile Image Logo -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text float-animation">WJ</span>
+                <img src="images/myImage.png" alt="Wabi Jabesa" class="nav-logo-img float-animation">
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -38,81 +88,308 @@
     </nav>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero-section">
             <div class="hero-container">
                 <div class="hero-content reveal-left">
-                    <div class="hero-badge pulse-animation">Welcome to my portfolio</div>
+                    <div class="hero-badge pulse-animation">✨ Welcome to my portfolio ✨</div>
                     <h1 class="hero-title">
                         <span class="greeting">Hi, I'm</span>
                         <span class="name shimmer-text">Wabi Jabesa</span>
                     </h1>
+                    
+                    <!-- TYPING ANIMATION -->
                     <div class="hero-typed">
                         <span class="typed-text"></span>
                         <span class="cursor typing-cursor">|</span>
                     </div>
+                    
                     <p class="hero-description">
                         Information Systems student passionate about creating elegant solutions 
                         through code. Currently exploring Java, Web Development, and Database Systems.
                     </p>
                     <div class="hero-buttons">
-                        <a href="projects.html" class="btn-primary magnetic-btn hover-grow">View My Work</a>
-                        <a href="contact.html" class="btn-secondary magnetic-btn hover-grow">Let's Connect</a>
+                        <a href="projects.html" class="btn-primary magnetic-btn hover-grow">✨ View My Work ✨</a>
+                        <a href="contact.html" class="btn-secondary magnetic-btn hover-grow">💫 Let's Connect 💫</a>
+                        <a href="#" id="downloadCVBtn" class="btn-download magnetic-btn hover-grow">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
                     </div>
-                    <div class="hero-stats stagger-container">
-                        <div class="stat hover-lift">
-                            <span class="stat-number counter-number" data-target="10">0</span>
-                            <span class="stat-label">Projects</span>
+                </div>
+                
+                <div class="hero-image-container reveal-right">
+                    <div class="sunlight-container">
+                        <div class="sun-ray sun-ray-1"></div>
+                        <div class="sun-ray sun-ray-2"></div>
+                        <div class="sun-ray sun-ray-3"></div>
+                        <div class="sun-ray sun-ray-4"></div>
+                        <div class="sun-ray sun-ray-5"></div>
+                        <div class="sun-ray sun-ray-6"></div>
+                        <div class="sun-ray sun-ray-7"></div>
+                        <div class="sun-ray sun-ray-8"></div>
+                        <div class="sun-ray sun-ray-9"></div>
+                        <div class="sun-ray sun-ray-10"></div>
+                        <div class="sun-ray sun-ray-11"></div>
+                        <div class="sun-ray sun-ray-12"></div>
+                        
+                        <div class="glow-orb glow-orb-1"></div>
+                        <div class="glow-orb glow-orb-2"></div>
+                        <div class="glow-orb glow-orb-3"></div>
+                        <div class="glow-orb glow-orb-4"></div>
+                        <div class="glow-orb glow-orb-5"></div>
+                        
+                        <div class="hero-image-wrapper">
+                            <div class="sun-glow-border"></div>
+                            <div class="sun-glow-effect"></div>
+                            <img src="images/myImage.png" alt="Wabi Jabesa" class="hero-img">
+                            <div class="image-ring"></div>
+                            <div class="image-dots"></div>
                         </div>
-                        <div class="stat hover-lift">
-                            <span class="stat-number counter-number" data-target="5">0</span>
-                            <span class="stat-label">Technologies</span>
-                        </div>
-                        <div class="stat hover-lift">
-                            <span class="stat-number counter-number" data-target="2024">0</span>
-                            <span class="stat-label">Started</span>
+                        
+                        <div class="floating-social-icons">
+                            <a href="https://github.com/wabijabesa127-dev" target="_blank" class="social-icon-floating github-icon" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                                <span class="tooltip">GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/wabi-jabesa-905b3a35b" target="_blank" class="social-icon-floating linkedin-icon" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span class="tooltip">LinkedIn</span>
+                            </a>
+                            <a href="https://www.instagram.com/wabijfite" target="_blank" class="social-icon-floating instagram-icon" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                                <span class="tooltip">Instagram</span>
+                            </a>
+                            <a href="https://x.com/WabiJ38333" target="_blank" class="social-icon-floating twitter-icon" rel="noopener noreferrer">
+                                <i class="fab fa-twitter"></i>
+                                <span class="tooltip">Twitter</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="hero-image-container reveal-right">
-                    <div class="hero-image-wrapper float-reverse">
-                        <img src="images/myImage.png" alt="Wabi Jabesa" class="hero-img glow-animation">
-                        <div class="image-ring"></div>
-                        <div class="image-dots"></div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-badge">What I Do</span>
+                    <h2>My <span class="highlight">Services</span></h2>
+                    <p>Professional services I offer as a developer</p>
+                </div>
+                <div class="services-grid stagger-container">
+                    <div class="service-card tilt-card">
+                        <div class="service-icon"><i class="fas fa-code"></i></div>
+                        <h3>Web Development</h3>
+                        <p>Modern, responsive websites using HTML5, CSS3, and JavaScript.</p>
+                    </div>
+                    <div class="service-card tilt-card">
+                        <div class="service-icon"><i class="fab fa-java"></i></div>
+                        <h3>Java Applications</h3>
+                        <p>Desktop applications using Java Swing and OOP principles.</p>
+                    </div>
+                    <div class="service-card tilt-card">
+                        <div class="service-icon"><i class="fas fa-database"></i></div>
+                        <h3>Database Design</h3>
+                        <p>MySQL database design, optimization, and management.</p>
+                    </div>
+                    <div class="service-card tilt-card">
+                        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Responsive Design</h3>
+                        <p>Websites that work perfectly on all devices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Showcase -->
+        <section class="design-showcase">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-badge">Design Preview</span>
+                    <h2>Portfolio <span class="highlight">Design</span></h2>
+                    <p>Explore the visual design of my portfolio</p>
+                </div>
+                <div class="design-showcase-wrapper reveal-scale">
+                    <div class="design-showcase-card">
+                        <div class="design-showcase-image">
+                            <img src="images/myportimg.png" alt="Portfolio Design Preview">
+                            <div class="design-showcase-overlay" onclick="openDesignModal()">
+                                <div class="design-showcase-zoom">
+                                    <i class="fas fa-expand"></i>
+                                    <span>Click to expand</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="design-showcase-info">
+                            <div class="design-showcase-header">
+                                <h3>Wabi Jabesa Portfolio</h3>
+                                <span class="design-showcase-badge">Latest</span>
+                            </div>
+                            <p>Modern, responsive portfolio design with dark/light mode, interactive elements, and smooth animations.</p>
+                            <div class="design-showcase-tags">
+                                <span><i class="fas fa-check-circle"></i> Modern UI</span>
+                                <span><i class="fas fa-check-circle"></i> Responsive</span>
+                                <span><i class="fas fa-check-circle"></i> Interactive</span>
+                                <span><i class="fas fa-check-circle"></i> Dark/Light Mode</span>
+                            </div>
+                            <div class="design-showcase-actions">
+                                <button onclick="openDesignModal()" class="btn-primary">
+                                    <i class="fas fa-eye"></i> View Full Design
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications-section">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <span class="section-badge">Achievements</span>
+                    <h2>My <span class="highlight">Certifications</span></h2>
+                    <p>Professional certifications and achievements</p>
+                </div>
+                <div class="cert-grid stagger-container">
+                    <div class="cert-card featured-cert">
+                        <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Artificial Intelligence Fundamentals</h3>
+                        <p class="cert-issuer">Udacity | Accenture</p>
+                        <p class="cert-date">Completed: October 16, 2025</p>
+                        <div class="cert-buttons">
+                            <a href="pdf/My_Certificate.PDF" target="_blank" class="cert-link pdf-link">
+                                <i class="fas fa-file-pdf"></i> View PDF
+                            </a>
+                            <a href="#" class="cert-link info-link" onclick="viewCertificateInfo(); return false;">
+                                <i class="fas fa-info-circle"></i> Info
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fab fa-free-code-camp"></i></div>
+                        <h3>Responsive Web Design</h3>
+                        <p class="cert-issuer">freeCodeCamp</p>
+                        <p class="cert-date">2024</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fab fa-java"></i></div>
+                        <h3>Java Programming</h3>
+                        <p class="cert-issuer">Oracle Certified</p>
+                        <p class="cert-date">2025</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fas fa-database"></i></div>
+                        <h3>MySQL Database</h3>
+                        <p class="cert-issuer">Oracle University</p>
+                        <p class="cert-date">2025</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Design Modal -->
+    <div id="designModal" class="design-modal">
+        <div class="design-modal-content">
+            <span class="design-modal-close" onclick="closeDesignModal()">&times;</span>
+            <h2>Portfolio Design Preview</h2>
+            <p class="design-modal-subtitle">Full design view of Wabi Jabesa Portfolio</p>
+            <img src="images/myportimg.png" alt="Full Portfolio Design" class="design-modal-image">
+            <div class="design-modal-info">
+                <span class="design-modal-tag"><i class="fas fa-palette"></i> Modern Design</span>
+                <span class="design-modal-tag"><i class="fas fa-mobile-alt"></i> Responsive</span>
+                <span class="design-modal-tag"><i class="fas fa-sun"></i> Dark/Light Mode</span>
+                <span class="design-modal-tag"><i class="fas fa-code"></i> Interactive</span>
+            </div>
+            <button onclick="closeDesignModal()" class="btn-primary">Close Preview</button>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="cert-modal">
+        <div class="cert-modal-content">
+            <span class="cert-modal-close" onclick="closeCertModal()">&times;</span>
+            <div class="cert-modal-icon"><i class="fas fa-robot"></i></div>
+            <h2>Artificial Intelligence Fundamentals</h2>
+            <p class="cert-modal-issuer">Udacity | Accenture</p>
+            <p class="cert-modal-date">Completed: October 16, 2025</p>
+            <div class="cert-modal-id">Certificate ID: 25be7750-a5fd-11f0-9009-77252591a257</div>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 1rem 0;">
+                This verified Nanodegree certificate confirms that Wabi Jabea has successfully completed 
+                the Artificial Intelligence Fundamentals program.
+            </p>
+            <a href="#" class="cert-modal-btn" onclick="closeCertModal(); return false;">Close</a>
+        </div>
+    </div>
+
+    <!-- Privacy & Terms Modals -->
+    <div id="privacyModal" class="privacy-modal">
+        <div class="privacy-modal-content">
+            <span class="privacy-modal-close" onclick="closePrivacyModal()">&times;</span>
+            <div class="privacy-modal-icon"><i class="fas fa-shield-alt"></i></div>
+            <h2>Privacy Policy</h2>
+            <div class="privacy-modal-body">
+                <p><strong>Last Updated:</strong> June 13, 2026</p>
+                <h3>1. Information I Collect</h3>
+                <p>When you contact me, I collect your name and email address.</p>
+                <h3>2. How I Use Your Information</h3>
+                <p>I use your information to respond to your inquiries.</p>
+                <h3>3. Contact Me</h3>
+                <p>Email: <strong>wabijabesa127@gmail.com</strong></p>
+            </div>
+            <button class="privacy-modal-btn" onclick="closePrivacyModal()">I Understand</button>
+        </div>
+    </div>
+
+    <div id="termsModal" class="terms-modal">
+        <div class="terms-modal-content">
+            <span class="terms-modal-close" onclick="closeTermsModal()">&times;</span>
+            <div class="terms-modal-icon"><i class="fas fa-file-contract"></i></div>
+            <h2>Terms of Use</h2>
+            <div class="terms-modal-body">
+                <p><strong>Last Updated:</strong> June 13, 2026</p>
+                <h3>1. Content Usage</h3>
+                <p>All content is the property of Wabi Jabesa. You may share but not copy without credit.</p>
+                <h3>2. Contact</h3>
+                <p>Email: <strong>wabijabesa127@gmail.com</strong></p>
+            </div>
+            <button class="terms-modal-btn" onclick="closeTermsModal()">I Agree</button>
+        </div>
+    </div>
+
+     <!-- Footer Section -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-row">
+                <!-- Column 1: Logo & About -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <span class="footer-logo-text">WJ</span>
+                        <img src="images/myImage.png" alt="Wabi Jabesa" class="footer-logo-img float-animation">
                         <h3>Wabi Jabesa</h3>
                     </div>
                     <p class="footer-desc">Building modern web experiences with passion and purpose. Information Systems student aspiring to become a professional software developer.</p>
-                <div class="footer-social">
-                    <a href="https://github.com/wabijabesa127-dev" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/wabi-jabesa-905b3a35b" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/wabijfite" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                    <a href="https://x.com/WabiJ38333" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-                </div>
+                    <div class="footer-social">
+                        <a href="https://github.com/wabijabesa127-dev" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/wabi-jabesa-905b3a35b" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/wabijfite" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/WabiJ38333" target="_blank" class="social-icon" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    </div>
                 </div>
                 
+                <!-- Column 2: Quick Links -->
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Me</a></li>
                         <li><a href="projects.html">Projects</a></li>
-                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
+                <!-- Column 3: My Skills -->
                 <div class="footer-col">
                     <h4>My Skills</h4>
                     <ul class="footer-links">
@@ -124,6 +401,7 @@
                     </ul>
                 </div>
                 
+                <!-- Column 4: Contact Info -->
                 <div class="footer-col">
                     <h4>Contact Info</h4>
                     <ul class="footer-contact">
@@ -143,13 +421,14 @@
                 </div>
             </div>
             
+            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <p>&copy; 2026 Wabi Jabesa. All rights reserved.</p>
-                    <p class="footer-quote">"With God, all things are possible"</p>
+                    <p class="footer-quote-bold">"With God, all things are possible"</p>
                     <div class="footer-bottom-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
+                        <a href="#" onclick="openPrivacyModal(); return false;">Privacy Policy</a>
+                        <a href="#" onclick="openTermsModal(); return false;">Terms of Use</a>
                     </div>
                 </div>
             </div>
@@ -157,5 +436,356 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    
+    <script>
+
+
+        // ============================================
+        // SLOW TYPING ANIMATION
+        // ============================================
+        const typedWords = ['Developer', 'Problem Solver', 'Student', 'Creative Thinker'];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typedTextElement = document.querySelector('.typed-text');
+
+        function typeEffect() {
+            if (!typedTextElement) return;
+            
+            const currentWord = typedWords[wordIndex];
+            
+            if (isDeleting) {
+                typedTextElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 3500);
+                return;
+            }
+            
+            if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % typedWords.length;
+                setTimeout(typeEffect, 1200);
+                return;
+            }
+            
+            const speed = isDeleting ? 150 : 200;
+            setTimeout(typeEffect, speed);
+        }
+
+        if (typedTextElement) {
+            setTimeout(typeEffect, 500);
+        }
+
+        // ============================================
+        // PRELOADER - FIRST VISIT ONLY
+        // ============================================
+        (function() {
+            const preloader = document.getElementById('preloader');
+            const hasVisited = sessionStorage.getItem('hasVisited');
+            
+            if (hasVisited) {
+                preloader.style.display = 'none';
+                return;
+            }
+            
+            sessionStorage.setItem('hasVisited', 'true');
+            
+            const container = document.getElementById('fragmentsContainer');
+            const progressFill = document.getElementById('loaderProgressFill');
+            const progressText = document.getElementById('loaderProgressText');
+            
+            const GRID_SIZE = 8;
+            const IMAGE_URL = 'images/myImage.png';
+            const TOTAL_STEPS = 75;
+            let currentStep = 0;
+            
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.src = IMAGE_URL;
+            
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const imgWidth = 200;
+                const imgHeight = 200;
+                canvas.width = imgWidth;
+                canvas.height = imgHeight;
+                ctx.drawImage(img, 0, 0, imgWidth, imgHeight);
+                
+                const imageData = ctx.getImageData(0, 0, imgWidth, imgHeight);
+                const data = imageData.data;
+                const tileWidth = imgWidth / GRID_SIZE;
+                const tileHeight = imgHeight / GRID_SIZE;
+                
+                const fragments = [];
+                
+                for (let row = 0; row < GRID_SIZE; row++) {
+                    for (let col = 0; col < GRID_SIZE; col++) {
+                        const sx = col * tileWidth;
+                        const sy = row * tileHeight;
+                        const px = Math.floor(sx + tileWidth / 2);
+                        const py = Math.floor(sy + tileHeight / 2);
+                        const idx = (py * imgWidth + px) * 4;
+                        
+                        const r = data[idx] || 0;
+                        const g = data[idx + 1] || 0;
+                        const b = data[idx + 2] || 0;
+                        const a = data[idx + 3] || 255;
+                        
+                        const angle = Math.random() * Math.PI * 2;
+                        const distance = 300 + Math.random() * 400;
+                        const startX = Math.cos(angle) * distance;
+                        const startY = Math.sin(angle) * distance;
+                        const targetX = (col - GRID_SIZE / 2) * tileWidth + tileWidth / 2;
+                        const targetY = (row - GRID_SIZE / 2) * tileHeight + tileHeight / 2;
+                        const delay = Math.random() * 0.8;
+                        
+                        fragments.push({ row, col, sx, sy, r, g, b, a, startX, startY, targetX, targetY, tileWidth, tileHeight, delay });
+                    }
+                }
+                
+                fragments.forEach((frag) => {
+                    const tile = document.createElement('div');
+                    tile.className = 'fragment-tile';
+                    tile.style.left = '50%';
+                    tile.style.top = '50%';
+                    tile.style.width = tileWidth + 'px';
+                    tile.style.height = tileHeight + 'px';
+                    tile.style.transform = `translate(${frag.startX}px, ${frag.startY}px) scale(0.3)`;
+                    tile.style.opacity = '0';
+                    tile.style.backgroundColor = `rgba(${frag.r}, ${frag.g}, ${frag.b}, ${frag.a / 255})`;
+                    tile.style.border = '1px solid rgba(255,255,255,0.05)';
+                    tile.style.boxShadow = '0 0 10px rgba(56,189,248,0.1)';
+                    tile.dataset.startX = frag.startX;
+                    tile.dataset.startY = frag.startY;
+                    tile.dataset.targetX = frag.targetX;
+                    tile.dataset.targetY = frag.targetY;
+                    tile.dataset.delay = frag.delay;
+                    container.appendChild(tile);
+                });
+                
+                const tileElements = container.querySelectorAll('.fragment-tile');
+                
+                function animateFragments() {
+                    currentStep++;
+                    const progress = Math.min(currentStep / TOTAL_STEPS, 1);
+                    const percent = Math.floor(progress * 100);
+                    progressFill.style.width = percent + '%';
+                    progressText.textContent = percent + '%';
+                    
+                    let allDone = true;
+                    
+                    tileElements.forEach((tile, i) => {
+                        const frag = fragments[i];
+                        const delay = frag.delay;
+                        const adjustedProgress = Math.max(0, Math.min((progress - delay * 0.2) / (1 - delay * 0.2), 1));
+                        
+                        if (adjustedProgress < 0) {
+                            tile.style.opacity = '0';
+                            allDone = false;
+                            return;
+                        }
+                        
+                        const ease = 1 - Math.pow(1 - adjustedProgress, 3);
+                        const x = frag.startX * (1 - ease) + frag.targetX * ease;
+                        const y = frag.startY * (1 - ease) + frag.targetY * ease;
+                        const scale = 0.3 + 0.7 * ease;
+                        const opacity = ease;
+                        
+                        tile.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+                        tile.style.opacity = opacity.toString();
+                        
+                        if (ease > 0.9) {
+                            tile.style.boxShadow = `0 0 20px rgba(56,189,248,${(ease - 0.9) * 2})`;
+                        }
+                        
+                        if (ease < 1) allDone = false;
+                    });
+                    
+                    if (allDone && progress >= 1) {
+                        document.querySelector('.loader-content').style.opacity = '1';
+                        setTimeout(() => {
+                            preloader.classList.add('hide');
+                            setTimeout(() => { preloader.style.display = 'none'; }, 800);
+                        }, 1500);
+                        return;
+                    }
+                    
+                    requestAnimationFrame(animateFragments);
+                }
+                
+                setTimeout(animateFragments, 500);
+            };
+            
+            img.onerror = function() {
+                console.warn('Image not found, using fallback loader');
+                container.innerHTML = `
+                    <div class="loader-container" style="text-align:center;z-index:5;">
+                        <div class="loader-ring" style="width:60px;height:60px;margin:0 auto 20px;border:3px solid rgba(56,189,248,0.2);border-top:3px solid #38bdf8;border-radius:50%;animation:spin 0.8s linear infinite;"></div>
+                        <div class="loader-text" style="color:#38bdf8;font-size:18px;font-weight:600;">Loading<span class="loader-dots"><span>.</span><span>.</span><span>.</span></span></div>
+                    </div>
+                `;
+                setTimeout(() => {
+                    preloader.classList.add('hide');
+                    setTimeout(() => { preloader.style.display = 'none'; }, 800);
+                }, 3000);
+            };
+            
+            setTimeout(() => {
+                if (!preloader.classList.contains('hide')) {
+                    preloader.classList.add('hide');
+                    setTimeout(() => { preloader.style.display = 'none'; }, 800);
+                }
+            }, 8000);
+        })();
+
+        // ============================================
+        // BACK TO TOP
+        // ============================================
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', function() {
+                backToTop.classList.toggle('show', window.scrollY > 300);
+            });
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // ============================================
+        // DOWNLOAD CV
+        // ============================================
+        const downloadBtn = document.getElementById('downloadCVBtn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const cvContent = 'WABI JABESA - SOFTWARE DEVELOPER CV\n=======================================\n\nCONTACT\nEmail: wabijabesa127@gmail.com\nPhone: +251 942 501 020\n\nEDUCATION\nBachelor of Information Systems (2024-Present)\n\nCERTIFICATIONS\n✓ AI Fundamentals - Udacity (2025)\n✓ Responsive Web Design - freeCodeCamp (2024)\n\nSKILLS\nWeb Development, Java, MySQL, Responsive Design';
+                const blob = new Blob([cvContent], { type: 'text/plain' });
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = 'Wabi_Jabesa_CV.txt';
+                a.click();
+                URL.revokeObjectURL(a.href);
+                alert('✅ CV download started!');
+            });
+        }
+
+        // ============================================
+        // DESIGN MODAL
+        // ============================================
+        function openDesignModal() {
+            document.getElementById('designModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeDesignModal() {
+            document.getElementById('designModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // ============================================
+        // CERTIFICATE MODAL
+        // ============================================
+        function viewCertificateInfo() {
+            document.getElementById('certModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCertModal() {
+            document.getElementById('certModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // ============================================
+        // PRIVACY & TERMS MODALS
+        // ============================================
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        function openTermsModal() {
+            document.getElementById('termsModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeTermsModal() {
+            document.getElementById('termsModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('designModal')) 
+            closeDesignModal();
+            if (event.target === document.getElementById('certModal')) 
+            closeCertModal();
+            if (event.target === document.getElementById('privacyModal')) 
+            closePrivacyModal();
+            if (event.target === document.getElementById('termsModal')) 
+            closeTermsModal();
+        };
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeDesignModal();
+                closeCertModal();
+                closePrivacyModal();
+                closeTermsModal();
+            }
+        });
+
+        // ============================================
+        // ANIMATE SERVICES & CERTIFICATIONS
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            const serviceObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        serviceObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            serviceCards.forEach(function(card) { serviceObserver.observe(card); });
+            
+            const certCards = document.querySelectorAll('.cert-card');
+            const certObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        certObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            certCards.forEach(function(card) { certObserver.observe(card); });
+        });
+
+        // ============================================
+        // MOBILE MENU
+        // ============================================
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            document.querySelectorAll('.nav-menu a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
+
+        console.log('Portfolio loaded successfully!');
+    </script>
 </body>
 </html>

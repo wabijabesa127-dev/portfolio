@@ -276,3 +276,62 @@ const progressObserver = new IntersectionObserver((entries) => {
 progressBars.forEach(bar => {
     progressObserver.observe(bar);
 });
+
+        // ============================================
+        // PRIVACY POLICY MODAL
+        // ============================================
+        function openPrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // ============================================
+        // TERMS OF USE MODAL
+        // ============================================
+        function openTermsModal() {
+            const modal = document.getElementById('termsModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeTermsModal() {
+            const modal = document.getElementById('termsModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const privacyModal = document.getElementById('privacyModal');
+            const termsModal = document.getElementById('termsModal');
+            
+            if (event.target === privacyModal) {
+                closePrivacyModal();
+            }
+            if (event.target === termsModal) {
+                closeTermsModal();
+            }
+        }
+        
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePrivacyModal();
+                closeTermsModal();
+            }
+        });

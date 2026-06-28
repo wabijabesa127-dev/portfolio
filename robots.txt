@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow all pages to be indexed
+Allow: /index.html
+Allow: /about.html
+Allow: /projects.html
+Allow: /blog.html
+Allow: /contact.html
+
+# Disallow backend files from being indexed
+Disallow: /backend/
+Disallow: /css/
+Disallow: /js/
+
+# Sitemap location
+Sitemap: https://wabijabesa.com/sitemap.xml
+
+# Crawl delay to be respectful to the server
+Crawl-delay: 5

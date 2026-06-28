@@ -3,7 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
     <title>Wabi Jabesa | Projects Portfolio</title>
+    <meta name="description" content="Explore Wabi Jabesa's projects - Web Development, Java Applications, Database Systems. See my work as a Full Stack Developer.">
+    <meta name="keywords" content="Wabi Jabesa, projects, portfolio, web development, Java, MySQL, full stack developer, student projects">
+    <meta name="author" content="Wabi Jabesa">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wabijabesa.com/projects.html">
+    <meta property="og:title" content="Projects | Wabi Jabesa - Full Stack Developer Portfolio">
+    <meta property="og:description" content="Explore Wabi Jabesa's projects - Web Development, Java Applications, Database Systems.">
+    <meta property="og:image" content="https://wabijabesa.com/images/myImage.png">
+    <meta property="og:site_name" content="Wabi Jabesa Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://wabijabesa.com/projects.html">
+    <meta name="twitter:title" content="Projects | Wabi Jabesa - Full Stack Developer Portfolio">
+    <meta name="twitter:description" content="Explore Wabi Jabesa's projects - Web Development, Java Applications, Database Systems.">
+    <meta name="twitter:image" content="https://wabijabesa.com/images/myImage.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://wabijabesa.com/projects.html">
+    
+    <!-- Circular Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CclipPath id='circle'%3E%3Ccircle cx='50' cy='50' r='45'/%3E%3C/clipPath%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='%2338bdf8'/%3E%3Cimage href='images/myImage.png' x='5' y='5' width='90' height='90' clip-path='url(%23circle)'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="images/myImage.png">
+    
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,16 +46,20 @@
 <body>
     <div class="bg-overlay"></div>
     
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text float-animation">WJ</span>
+                <img src="images/myImage.png" alt="Logo" class="nav-logo-img float-animation">
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -48,13 +81,37 @@
         </div>
     </section>
 
+    <!-- Search Bar -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-wrapper">
+                <div class="search-input-group">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="projectSearch" placeholder="Search projects by title or technology...">
+                    <button id="clearSearch" class="clear-search-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="search-results-count" id="searchResultsCount">
+                    Showing <span id="visibleCount">8</span> of <span id="totalCount">8</span> projects
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="filter-section">
         <div class="container">
             <div class="filter-buttons stagger-container">
-                <button class="filter-btn active magnetic-btn" data-filter="all">All Projects</button>
-                <button class="filter-btn magnetic-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn magnetic-btn" data-filter="java">Java</button>
-                <button class="filter-btn magnetic-btn" data-filter="database">Database</button>
+                <button class="filter-btn active magnetic-btn" data-filter="all">
+                    <i class="fas fa-th-large"></i> All Projects <span class="filter-count">8</span>
+                </button>
+                <button class="filter-btn magnetic-btn" data-filter="web">
+                    <i class="fas fa-globe"></i> Web Development <span class="filter-count">5</span>
+                </button>
+                <button class="filter-btn magnetic-btn" data-filter="java">
+                    <i class="fab fa-java"></i> Java <span class="filter-count">3</span>
+                </button>
+                <button class="filter-btn magnetic-btn" data-filter="database">
+                    <i class="fas fa-database"></i> Database <span class="filter-count">2</span>
+                </button>
             </div>
         </div>
     </section>
@@ -63,9 +120,9 @@
         <div class="container">
             <div class="projects-grid stagger-container" id="projectsGrid">
                 <!-- Project 1 - Portfolio Website -->
-                <div class="project-card tilt-card" data-category="web">
+                <div class="project-card tilt-card" data-category="web" data-title="Modern Portfolio Website" data-tech="HTML5 CSS3 JavaScript">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250/38bdf8/ffffff?text=Portfolio" alt="Portfolio Website">
+                        <img src="images/myportimg.png" alt="Portfolio Website">
                         <div class="project-overlay">
                             <button class="view-project magnetic-btn" onclick="openProjectModal(1)">
                                 <i class="fas fa-eye"></i> Quick View
@@ -77,18 +134,23 @@
                         <h3>Modern Portfolio Website</h3>
                         <p>A fully responsive personal portfolio showcasing my skills and work.</p>
                         <div class="project-tech">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
                             <span>HTML5</span>
                             <span>CSS3</span>
                             <span>JavaScript</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link magnetic-btn" onclick="openProjectModal(1)"><i class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/wabijabesa127-dev/portfolio" target="_blank" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="index.html" target="_blank" class="project-link magnetic-btn"><i class="fas fa-external-link-alt"></i> Live</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card tilt-card" data-category="java">
+                <!-- Project 2 - Java Calculator -->
+                <div class="project-card tilt-card" data-category="java" data-title="Advanced Java Calculator" data-tech="Java Swing OOP">
                     <div class="project-image">
                         <img src="https://via.placeholder.com/400x250/6366f1/ffffff?text=Calculator" alt="Java Calculator">
                         <div class="project-overlay">
@@ -102,19 +164,20 @@
                         <h3>Advanced Java Calculator</h3>
                         <p>A feature-rich calculator with GUI interface built using Java Swing.</p>
                         <div class="project-tech">
+                            <i class="fab fa-java"></i>
                             <span>Java</span>
                             <span>Swing</span>
                             <span>OOP</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link magnetic-btn" onclick="openProjectModal(2)"><i class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/wabijabesa127-dev/java-calculator" target="_blank" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 - Student Management System -->
-                <div class="project-card tilt-card" data-category="java database">
+                <div class="project-card tilt-card" data-category="java database" data-title="Student Management System" data-tech="Java MySQL JDBC">
                     <div class="project-image">
                         <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=Student+System" alt="Student Management System">
                         <div class="project-overlay">
@@ -128,19 +191,21 @@
                         <h3>Student Management System</h3>
                         <p>Complete student record management system with MySQL database integration.</p>
                         <div class="project-tech">
+                            <i class="fab fa-java"></i>
+                            <i class="fas fa-database"></i>
                             <span>Java</span>
                             <span>MySQL</span>
                             <span>JDBC</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link magnetic-btn" onclick="openProjectModal(3)"><i class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/wabijabesa127-dev/student-management" target="_blank" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 4 - Weather App -->
-                <div class="project-card tilt-card" data-category="web">
+                <div class="project-card tilt-card" data-category="web" data-title="Real-Time Weather App" data-tech="JavaScript API CSS">
                     <div class="project-image">
                         <img src="https://via.placeholder.com/400x250/ef4444/ffffff?text=Weather+App" alt="Weather App">
                         <div class="project-overlay">
@@ -154,19 +219,22 @@
                         <h3>Real-Time Weather App</h3>
                         <p>Weather application fetching live data from OpenWeatherMap API.</p>
                         <div class="project-tech">
+                            <i class="fab fa-js"></i>
+                            <i class="fas fa-cloud-sun"></i>
                             <span>JavaScript</span>
                             <span>API</span>
                             <span>CSS</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link magnetic-btn" onclick="openProjectModal(4)"><i class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/wabijabesa127-dev/weather-app" target="_blank" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link magnetic-btn"><i class="fas fa-external-link-alt"></i> Live</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 5 - Task Manager App -->
-                <div class="project-card tilt-card" data-category="web">
+                <div class="project-card tilt-card" data-category="web" data-title="Task Manager App" data-tech="HTML5 CSS3 JavaScript">
                     <div class="project-image">
                         <img src="https://via.placeholder.com/400x250/f59e0b/ffffff?text=Task+Manager" alt="Task Manager">
                         <div class="project-overlay">
@@ -180,19 +248,23 @@
                         <h3>Task Manager App</h3>
                         <p>Elegant to-do list application with local storage and task categories.</p>
                         <div class="project-tech">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
                             <span>HTML5</span>
                             <span>CSS3</span>
                             <span>JavaScript</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link magnetic-btn" onclick="openProjectModal(5)"><i class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/wabijabesa127-dev/task-manager" target="_blank" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link magnetic-btn"><i class="fas fa-external-link-alt"></i> Live</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 6 - Library Database System -->
-                <div class="project-card tilt-card" data-category="database">
+                <div class="project-card tilt-card" data-category="database" data-title="Library Management System" data-tech="MySQL SQL Database">
                     <div class="project-image">
                         <img src="https://via.placeholder.com/400x250/8b5cf6/ffffff?text=Library+System" alt="Library System">
                         <div class="project-overlay">
@@ -206,19 +278,21 @@
                         <h3>Library Management System</h3>
                         <p>MySQL database project for managing books, members, and transactions.</p>
                         <div class="project-tech">
+                            <i class="fas fa-database"></i>
+                            <i class="fas fa-table"></i>
                             <span>MySQL</span>
                             <span>SQL</span>
                             <span>Database Design</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link magnetic-btn" onclick="openProjectModal(6)"><i class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/wabijabesa127-dev/library-system" target="_blank" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 7 - E-commerce Landing Page -->
-                <div class="project-card tilt-card" data-category="web">
+                <div class="project-card tilt-card" data-category="web" data-title="E-commerce Landing Page" data-tech="HTML5 CSS3 Flexbox Grid">
                     <div class="project-image">
                         <img src="https://via.placeholder.com/400x250/06b6d4/ffffff?text=E-commerce" alt="E-commerce">
                         <div class="project-overlay">
@@ -232,19 +306,23 @@
                         <h3>E-commerce Landing Page</h3>
                         <p>Modern product landing page with animations and responsive design.</p>
                         <div class="project-tech">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fas fa-mobile-alt"></i>
                             <span>HTML5</span>
                             <span>CSS3</span>
                             <span>Flexbox/Grid</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link magnetic-btn" onclick="openProjectModal(7)"><i class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/wabijabesa127-dev/ecommerce-landing" target="_blank" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link magnetic-btn"><i class="fas fa-external-link-alt"></i> Live</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 8 - Banking Console App -->
-                <div class="project-card tilt-card" data-category="java">
+                <div class="project-card tilt-card" data-category="java" data-title="Banking Console Application" data-tech="Java OOP File Handling">
                     <div class="project-image">
                         <img src="https://via.placeholder.com/400x250/ec4899/ffffff?text=Banking+App" alt="Banking App">
                         <div class="project-overlay">
@@ -258,55 +336,63 @@
                         <h3>Banking Console Application</h3>
                         <p>Console-based banking system with account management and transactions.</p>
                         <div class="project-tech">
+                            <i class="fab fa-java"></i>
+                            <i class="fas fa-coins"></i>
                             <span>Java</span>
                             <span>OOP</span>
                             <span>File Handling</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link magnetic-btn" onclick="openProjectModal(8)"><i class="fas fa-info-circle"></i> Details</a>
-                            <a href="#" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
+                            <a href="https://github.com/wabijabesa127-dev/banking-app" target="_blank" class="project-link magnetic-btn"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid stagger-container">
-                <div class="stat-card hover-lift">
-                    <div class="stat-icon float-animation">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="stat-number counter-number" data-target="8">0</div>
-                    <div class="stat-label">Total Projects</div>
-                </div>
-                <div class="stat-card hover-lift">
-                    <div class="stat-icon float-animation">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="stat-number counter-number" data-target="5">0</div>
-                    <div class="stat-label">Web Projects</div>
-                </div>
-                <div class="stat-card hover-lift">
-                    <div class="stat-icon float-animation">
-                        <i class="fab fa-java"></i>
-                    </div>
-                    <div class="stat-number counter-number" data-target="3">0</div>
-                    <div class="stat-label">Java Projects</div>
-                </div>
-                <div class="stat-card hover-lift">
-                    <div class="stat-icon float-animation">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="stat-number counter-number" data-target="2">0</div>
-                    <div class="stat-label">Database Projects</div>
-                </div>
+            
+            <!-- Loading Animation -->
+            <div class="loading-more" id="loadingMore" style="display: none;">
+                <div class="spinner"></div>
+                <p>Loading more projects...</p>
             </div>
         </div>
     </section>
+
+    <!-- Stats Section
+<section class="stats-section">
+    <div class="container">
+        <div class="stats-grid stagger-container">
+            <div class="stat-card hover-lift">
+                <div class="stat-icon float-animation">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="stat-number" data-target="8">8</div>
+                <div class="stat-label">Total Projects</div>
+            </div>
+            <div class="stat-card hover-lift">
+                <div class="stat-icon float-animation">
+                    <i class="fas fa-calendar"></i>
+                </div>
+                <div class="stat-number" data-target="1">1</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card hover-lift">
+                <div class="stat-icon float-animation">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="stat-number" data-target="3">3</div>
+                <div class="stat-label">Certifications</div>
+            </div>
+            <div class="stat-card hover-lift">
+                <div class="stat-icon float-animation">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number" data-target="5">5</div>
+                <div class="stat-label">Technologies</div>
+            </div>
+        </div>
+    </div>
+</section> -->
 
     <!-- Call to Action -->
     <section class="cta-section">
@@ -314,12 +400,10 @@
             <div class="cta-content reveal-scale">
                 <h2>Have a Project in Mind?</h2>
                 <p>I'm always excited to work on new projects and challenges.</p>
-                <a href="contact.html" class="btn-primary magnetic-btn hover-grow">Let's Work Together</a>
+                <a href="contact.html" class="btn-primary magnetic-btn hover-grow">Let's Work Together <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
-
-
 
     <!-- Project Modal -->
     <div id="projectModal" class="modal">
@@ -348,12 +432,49 @@
         </div>
     </div>
 
+    <!-- Privacy & Terms Modals -->
+    <div id="privacyModal" class="privacy-modal">
+        <div class="privacy-modal-content">
+            <span class="privacy-modal-close" onclick="closePrivacyModal()">&times;</span>
+            <div class="privacy-modal-icon"><i class="fas fa-shield-alt"></i></div>
+            <h2>Privacy Policy</h2>
+            <div class="privacy-modal-body">
+                <p><strong>Last Updated:</strong> June 13, 2026</p>
+                <h3>1. Information I Collect</h3>
+                <p>When you contact me through my portfolio, I collect your name and email address to respond to your inquiries.</p>
+                <h3>2. How I Use Your Information</h3>
+                <p>I use your information solely to respond to your messages and improve my services.</p>
+                <h3>3. Contact Me</h3>
+                <p>Questions? Email: <strong>wabijabesa127@gmail.com</strong></p>
+            </div>
+            <button class="privacy-modal-btn" onclick="closePrivacyModal()">I Understand</button>
+        </div>
+    </div>
+
+    <div id="termsModal" class="terms-modal">
+        <div class="terms-modal-content">
+            <span class="terms-modal-close" onclick="closeTermsModal()">&times;</span>
+            <div class="terms-modal-icon"><i class="fas fa-file-contract"></i></div>
+            <h2>Terms of Use</h2>
+            <div class="terms-modal-body">
+                <p><strong>Last Updated:</strong> June 13, 2026</p>
+                <h3>1. Content Usage</h3>
+                <p>All project content is the property of Wabi Jabesa. You may view and share but not copy without credit.</p>
+                <h3>2. Contact</h3>
+                <p>Questions? Email: <strong>wabijabesa127@gmail.com</strong></p>
+            </div>
+            <button class="terms-modal-btn" onclick="closeTermsModal()">I Agree</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-row">
+                <!-- Column 1: Logo & About -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <span class="footer-logo-text">WJ</span>
+                        <img src="images/myImage.png" alt="Wabi Jabesa" class="footer-logo-img float-animation">
                         <h3>Wabi Jabesa</h3>
                     </div>
                     <p class="footer-desc">Building modern web experiences with passion and purpose. Information Systems student aspiring to become a professional software developer.</p>
@@ -365,17 +486,18 @@
                     </div>
                 </div>
                 
+                <!-- Column 2: Quick Links -->
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Me</a></li>
                         <li><a href="projects.html">Projects</a></li>
-                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
+                <!-- Column 3: My Skills -->
                 <div class="footer-col">
                     <h4>My Skills</h4>
                     <ul class="footer-links">
@@ -387,6 +509,7 @@
                     </ul>
                 </div>
                 
+                <!-- Column 4: Contact Info -->
                 <div class="footer-col">
                     <h4>Contact Info</h4>
                     <ul class="footer-contact">
@@ -406,13 +529,14 @@
                 </div>
             </div>
             
+            <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <p>&copy; 2026 Wabi Jabesa. All rights reserved.</p>
-                    <p class="footer-quote">"With God, all things are possible"</p>
+                    <p class="footer-quote-bold">"With God, all things are possible"</p>
                     <div class="footer-bottom-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
+                        <a href="#" onclick="openPrivacyModal(); return false;">Privacy Policy</a>
+                        <a href="#" onclick="openTermsModal(); return false;">Terms of Use</a>
                     </div>
                 </div>
             </div>
@@ -422,5 +546,149 @@
     <script src="js/projects.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
+    
+    <script>
+
+        // ============================================
+        // SCROLL TO TOP ON NAVIGATION
+        // ============================================
+        window.addEventListener('pageshow', function(event) {
+            // If page is loaded from cache, still scroll to top
+            if (event.persisted) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+
+        // Also on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============================================
+        // BACK TO TOP BUTTON
+        // ============================================
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('show', window.scrollY > 300);
+        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ============================================
+        // SEARCH FUNCTIONALITY
+        // ============================================
+        const searchInput = document.getElementById('projectSearch');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        const visibleCountSpan = document.getElementById('visibleCount');
+        const totalCountSpan = document.getElementById('totalCount');
+        const projectCards = document.querySelectorAll('.project-card');
+        const totalProjects = projectCards.length;
+        
+        totalCountSpan.textContent = totalProjects;
+        
+        function filterProjects() {
+            const searchTerm = searchInput.value.toLowerCase();
+            let visible = 0;
+            
+            projectCards.forEach(card => {
+                const title = card.getAttribute('data-title')?.toLowerCase() || '';
+                const tech = card.getAttribute('data-tech')?.toLowerCase() || '';
+                const matchesSearch = title.includes(searchTerm) || tech.includes(searchTerm);
+                
+                if (searchTerm === '' || matchesSearch) {
+                    card.style.display = 'block';
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            visibleCountSpan.textContent = visible;
+            clearSearchBtn.style.display = searchTerm ? 'flex' : 'none';
+        }
+        
+        searchInput.addEventListener('input', filterProjects);
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            filterProjects();
+        });
+        
+        // ============================================
+        // FILTER FUNCTIONALITY WITH SEARCH
+        // ============================================
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filterValue = btn.getAttribute('data-filter');
+                
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                let visible = 0;
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    const searchTerm = searchInput.value.toLowerCase();
+                    const title = card.getAttribute('data-title')?.toLowerCase() || '';
+                    const tech = card.getAttribute('data-tech')?.toLowerCase() || '';
+                    const matchesSearch = searchTerm === '' || title.includes(searchTerm) || tech.includes(searchTerm);
+                    
+                    if ((filterValue === 'all' || categories.includes(filterValue)) && matchesSearch) {
+                        card.style.display = 'block';
+                        visible++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                visibleCountSpan.textContent = visible;
+            });
+        });
+        
+        // ============================================
+        // PRIVACY & TERMS MODAL FUNCTIONS
+        // ============================================
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        function openTermsModal() {
+            document.getElementById('termsModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeTermsModal() {
+            document.getElementById('termsModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        window.onclick = (event) => {
+            if (event.target === document.getElementById('privacyModal')) closePrivacyModal();
+            if (event.target === document.getElementById('termsModal')) closeTermsModal();
+        };
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closePrivacyModal();
+                closeTermsModal();
+            }
+        });
+        
+        // ============================================
+        // MOBILE MENU TOGGLE
+        // ============================================
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => navMenu.classList.remove('active'));
+            });
+        }
+        
+        console.log('Projects page loaded with all features!');
+    </script>
 </body>
 </html>
